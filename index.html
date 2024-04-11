@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Income Tax Calculator </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <form id="tax-calculator-form">
+              <div class="form-group">
+                <label for="income">Gross Annual Income :</label>
+                <input type="number" class="form-control" id="income" placeholder="Enter your gross annual income" required>
+                <div class="invalid-feedback" id="income-error-msg">Please enter a valid gross annual income.</div>
+              </div>
+              <div class="form-group">
+                <label for="extra-income">Extra Income :</label>
+                <input type="number" class="form-control" id="extra-income" placeholder="Enter your extra income from other sources" required>
+                <div class="invalid-feedback" id="extra-income-error-msg">Please enter a valid extra income.</div>
+              </div>
+              <div class="form-group">
+                <label for="age-group">Age Group:</label>
+                <select class="form-control" id="age-group" required>
+                  <option value="">Select age group</option>
+                  <option value="18-40">Under 40</option>
+                  <option value="40-60">40 to 60</option>
+                  <option value="60+">60 and above</option>
+                </select>
+                <div class="invalid-feedback" id="age-group-error-msg">Please select your age group.</div>
+              </div>
+              <div class="form-group">
+                <label for="deductions">Total Applicable Deductions :</label>
+                <input type="number" class="form-control" id="deductions" placeholder="Enter total applicable deductions" required>
+                <div class="invalid-feedback" id="deductions-error-msg">Please enter valid deductions.</div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" >Calculate Tax</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resultModalLabel" align-item="text-center">Tax Calculation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="result">
+          <!-- Tax calculation result will be displayed here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
